@@ -11,14 +11,16 @@ class ForecastController < ApplicationController
     @lng = params[:user_longitude]
 
 
-    base_url="https://api.forecast.io/forecast/c3dc222c33812ab534d5f3c93ef6b0b2/"
-    full_url=base_url+@lat+","+@lng
 
     # ==========================================================================
     # Your code goes below.
     # The latitude the user input is in the string @lat.
     # The longitude the user input is in the string @lng.
     # ==========================================================================
+
+
+    base_url="https://api.forecast.io/forecast/c3dc222c33812ab534d5f3c93ef6b0b2/"
+    full_url=base_url+@lat+","+@lng
 
     parsed_data = JSON.parse(open(full_url).read)
 
