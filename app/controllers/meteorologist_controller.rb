@@ -32,8 +32,6 @@ class MeteorologistController < ApplicationController
  @longitude = parsed_data["results"][0]["geometry"]["location"]["lng"]
 
 
-
-
     base_url="https://api.forecast.io/forecast/c3dc222c33812ab534d5f3c93ef6b0b2/"
     full_url=base_url.to_s+@latitude.to_s+","+@longitude.to_s
 
@@ -51,6 +49,10 @@ class MeteorologistController < ApplicationController
     @summary_of_next_several_hours = parsed_data["hourly"]["summary"]
 
     @summary_of_next_several_days =  parsed_data["daily"]["summary"]
+
+
+
+
 
     render("street_to_weather.html.erb")
   end
