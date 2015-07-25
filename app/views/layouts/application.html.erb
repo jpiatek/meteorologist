@@ -6,7 +6,7 @@
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/darkly/bootstrap.min.css">
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/darkly/bootstrap.min.css"> -->
 
 
 
@@ -23,12 +23,14 @@
 
     </style>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+
+
     <script>
 var map;
 function initialize() {
   map = new google.maps.Map(document.getElementById('map-canvas'), {
-    zoom: 8,
-    center: {lat: -34.397, lng: 150.644}
+    zoom: 13,
+    center: {lat: <%= @latitude%>, lng: <%=@longitude%>}
 
 // I can't figure out how to get the @latitude and @longitude into the above row.  The function doesn't seem to accept these
 
